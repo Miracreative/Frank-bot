@@ -68,10 +68,11 @@ const start = () => {
             }
         } else {
             try {
-                return bot.sendMessage(chatId, "I don't understand you", thanksBotBtn)
+                return  bot.sendMessage(chatId, "I don't understand you", thanksBotBtn)
             } catch(e) {
                 return await bot.sendMessage(chatId, e.message);
             }
+            
         }
     })
 
@@ -81,26 +82,25 @@ const start = () => {
             const chatId = msg.message.chat.id;
             if(data === 'about') {
                 return await bot.sendMessage(chatId, aboutMessage, thanksBotBtn);
-            }
+            } else
             if(data === 'back') {
                 return await bot.sendMessage(chatId, startMessage, startBotBtn);
-            }
+            } else
             if(data === 'mission') {
                 bot.sendMessage(chatId, missionMessage, thanksBotBtn);
-            } 
+            } else
             if(data === 'impact') {
                 bot.sendMessage(chatId, impactMessage, thanksBotBtn);
-            } 
+            } else
             if(data === 'programes') {
                 bot.sendMessage(chatId, programesMessage, thanksBotBtn);
-            } 
+            } else
             if(data === 'programes2') {
                 bot.sendMessage(chatId, programesMessage2, thanksBotBtn);
-            } 
+            } else
             if(data === 'contacts') {
                 bot.sendMessage(chatId, contactsMessage, thanksBotBtn);
-            } 
-            else {
+            } else {
                 return bot.sendMessage(chatId, "I don't understand you", thanksBotBtn)
             }
            
